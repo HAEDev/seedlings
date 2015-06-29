@@ -38,7 +38,10 @@ $files = array('');
 $content = '';
 
 foreach($files as $file) {
-    $content .= file_get_contents(dirname(dirname(__FILE__)).'/theme/'.$file) . "\n";
+    $filePath = dirname(dirname(__FILE__)).'/theme/'.$file;
+    if (is_file($filePath)) {
+        $content .= file_get_contents() . "\n";
+    }
 }
 
 $content .= <<<EOF
